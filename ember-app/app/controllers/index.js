@@ -6,11 +6,11 @@ export default Controller.extend({
 
     emailAddress: '',
 
-    actualEmailAddress: computed('emailAddress', () => {
-        console.log('actualEmailAddress function is called: ', this('emailAddress'));
+    actualEmailAddress: computed('emailAddress', function() {
+        console.log(`actualEmailAddress function is called: ${this.emailAddress}`);
     }),
 
-    emailAddressChanged: observer('emailAddress', () => {
-        console.log('observer is called', this('emailAddress'));
+    emailAddressChanged: observer('emailAddress', function() {
+        console.log(`observer is called ${this.emailAddress}`);
     })
 });
